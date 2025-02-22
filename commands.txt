@@ -1,0 +1,13 @@
+# commands for basic attack with all variation
+python watermark_eval.py --input_folder ./ms-coco/  --attack False
+python watermark_eval.py --input_folder ./diffusiondb_images  --attack False
+python watermark_eval.py --input_folder ./ms-coco   --attack False
+
+# command for adversarial attack with no variations
+python watermark_eval.py --input_folder ./adversarial_dataset --adv_only True
+
+#command for new loss function with adversarial on adversarial_dataset
+python watermark_eval.py --input_folder ./adversarial_dataset --config ./example/config/config_loss_changed.yaml
+
+#command for adversarial attack with post methods
+python adverserialall.py --input_folder ./adversarial_dataset --config ./example/config/config.yaml
